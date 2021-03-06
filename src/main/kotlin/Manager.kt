@@ -1,11 +1,12 @@
-class Manager (val name: String, val cpf: String, val balance: Double, val pwd: Int) {
+open class Manager(name: String, cpf: String, balance: Double, val pwd: Int) : Employee(name, cpf, balance) {
 
-    fun bonificaiton(): Double {
-        return balance * 0.2
+    override fun bonus(): Double {
+        return super.bonus() + balance
     }
 
-    fun password(pwd: Int): Boolean {
-        if(this.pwd == pwd){
+
+    open fun password(pwd: Int): Boolean {
+        if (this.pwd == pwd) {
             return true
         }
 

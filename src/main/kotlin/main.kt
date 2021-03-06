@@ -7,19 +7,34 @@ fun main() {
     println(vitor.cpf)
     println(vitor.balance)
 
-    println(vitor.bonificaiton())
+    println(vitor.bonus())
 
 
 
     val ana = Manager("Ana", "222.222.222-22", 2000.00, 123)
 
+    println()
     println(ana.name)
     println(ana.cpf)
     println(ana.balance)
 
-    println(ana.bonificaiton())
+    println(ana.bonus())
 
     if(ana.password(123)){
+        println("Deu bom")
+    }
+
+    val gui = Director("Guilherme", "333.333.33-33", 4000.00, 555, 200.00)
+
+    println()
+    println(gui.name)
+    println(gui.cpf)
+    println(gui.balance)
+    println(gui.plr)
+
+    println(gui.bonus())
+
+    if(gui.password(555)){
         println("Deu bom")
     }
 }
