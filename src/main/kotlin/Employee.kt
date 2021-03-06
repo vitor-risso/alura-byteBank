@@ -1,5 +1,6 @@
 open class Employee(val name: String, val cpf: String, val balance: Double) {
-    open fun bonus(): Double {
-        return balance * 0.1
-    }
+    open val bonus: Double
+        get() {
+            return balance * 0.1
+        }
 }
