@@ -1,5 +1,9 @@
 fun employeeTest() {
-    val vitor = Employee("Vitor", "111.111.111-11", 1000.00)
+    val vitor = Analist(
+        "Vitor",
+        "111.111.111-11",
+        1000.00,
+    )
 
     println(vitor.name)
     println(vitor.cpf)
@@ -8,7 +12,11 @@ fun employeeTest() {
     println(vitor.bonus)
 
 
-    val ana = Manager("Ana", "222.222.222-22", 2000.00, 123)
+    val ana = Manager(
+        "Ana",
+        "222.222.222-22",
+        2000.00, 123
+    )
 
     println()
     println(ana.name)
@@ -21,7 +29,13 @@ fun employeeTest() {
         println("Deu bom")
     }
 
-    val gui = Director("Guilherme", "333.333.33-33", 4000.00, 555, 200.00)
+    val gui = Director(
+        "Guilherme",
+        "333.333.33-33",
+        4000.00,
+        555,
+        200.00
+    )
 
     println()
     println(gui.name)

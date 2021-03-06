@@ -1,4 +1,4 @@
-class Analist(
+class Auxiliar(
     name: String,
     cpf: String,
     balance: Double
@@ -6,6 +6,6 @@ class Analist(
 
     override val bonus: Double
         get() {
-            return  balance
+            return balance * 0.05
         }
 }

@@ -1,6 +1,6 @@
-open class Account(val name: String, val number: Int) {
+abstract class Account(val name: String, val number: Int) {
     var saldo: Double = 0.0
-        private set
+        protected set
 
     fun deposit(n: Double) {
         if(n > 0 ){
@@ -8,18 +8,7 @@ open class Account(val name: String, val number: Int) {
         }
     }
 
-    open fun cash(n: Double) {
-        if (this.saldo > 0) {
-            if (n < this.saldo) {
-                this.saldo -= n
-                println("Saque efetuado no valor de $n")
-            } else {
-                println("Saldo insuficiente para esse saque, tente um valor inferior a $saldo")
-            }
-        } else {
-            println("Sua conta está negativa ou zerada")
-        }
-    }
+    abstract fun cash(n: Double)
 
     fun transfer(to: Account, n: Double) {
 

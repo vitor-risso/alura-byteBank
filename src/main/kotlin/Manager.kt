@@ -2,7 +2,7 @@ open class Manager(name: String, cpf: String, balance: Double, val pwd: Int) : E
 
     override val bonus: Double
         get() {
-            return super.bonus + balance
+            return  + balance
         }
 
 
