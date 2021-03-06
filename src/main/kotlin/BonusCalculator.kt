@@ -6,4 +6,5 @@ class BonusCalculator {
     fun register(employee: Employee){
         this.total += employee.bonus
     }
+
 }

@@ -2,20 +2,13 @@ class Director(
     name: String,
     cpf: String,
     balance: Double,
-    val pwd: Int,
+     pwd: Int,
     val plr: Double
-) : Employee(name, cpf, balance) {
+) : Admin(name, cpf, balance, pwd) {
 
     override val bonus: Double
         get() {
             return balance + plr
         }
 
-     fun password(pwd: Int): Boolean {
-        if (this.pwd == pwd) {
-            return true
-        }
-
-        return false
-    }
 }
