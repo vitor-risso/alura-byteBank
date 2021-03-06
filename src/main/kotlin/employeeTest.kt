@@ -25,7 +25,7 @@ fun employeeTest() {
 
     println(ana.bonus)
 
-    if (ana.password(123)) {
+    if (ana.auth(123)) {
         println("Deu bom")
     }
 
@@ -45,7 +45,7 @@ fun employeeTest() {
 
     println(gui.bonus)
 
-    if (gui.password(555)) {
+    if (gui.auth(555)) {
         println("Deu bom")
     }
     val marie = Analist("Maria", "444.444.444-44", 3500.00)

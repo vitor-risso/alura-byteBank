@@ -3,7 +3,7 @@ open class Manager(
     cpf: String,
     balance: Double,
     pwd: Int
-) : Admin(name, cpf, balance, pwd) {
+) : Admin(name, cpf, balance, pwd), Authenticable {
 
     override val bonus: Double
         get() {

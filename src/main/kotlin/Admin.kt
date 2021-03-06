@@ -1,12 +1,12 @@
 abstract class Admin(
-     name: String,
-     cpf: String,
-     balance: Double,
-    val pwd:Int
-): Employee(name, cpf, balance) {
+    name: String,
+    cpf: String,
+    balance: Double,
+    protected val pwd: Int
+) : Employee(name, cpf, balance) {
 
 
-    open fun password(pwd: Int): Boolean {
+    open fun auth(pwd: Int): Boolean {
         if (this.pwd == pwd) {
             return true
         }

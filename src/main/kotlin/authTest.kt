@@ -7,5 +7,5 @@ fun authTest() {
 
     internSystem.on(manager, 123)
     internSystem.on(director, 444)
-//    internSystem.on(client, 555)
+    internSystem.on(client, 555)
 }

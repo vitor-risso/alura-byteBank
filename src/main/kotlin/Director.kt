@@ -4,11 +4,10 @@ class Director(
     balance: Double,
      pwd: Int,
     val plr: Double
-) : Admin(name, cpf, balance, pwd) {
+) : Admin(name, cpf, balance, pwd), Authenticable {
 
     override val bonus: Double
         get() {
             return balance + plr
         }
-
 }
