@@ -1,7 +1,7 @@
 package br.com.example.myproject.model
 
 class SavingsAccount(
-    name: String,
+    name: Client,
     number: Int
 ) :
     Account(name, number) {

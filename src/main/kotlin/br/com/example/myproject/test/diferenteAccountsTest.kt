@@ -1,9 +1,21 @@
+import br.com.example.myproject.model.Address
+import br.com.example.myproject.model.Client
 import br.com.example.myproject.model.CurrentAccount
 import br.com.example.myproject.model.SavingsAccount
 
-fun diferentAccountsTest() {
-    val currentAccount = CurrentAccount("Vitor", 1005)
-    val savingsAccount = SavingsAccount("Ana", 1006)
+fun differentAccountsTest() {
+    val currentAccount = CurrentAccount(Client(
+        "Vitor",
+        "111.111.111-11",
+        pwd =123
+    ), 1005)
+
+    val savingsAccount = SavingsAccount(Client(
+        "Ana",
+        "222.222.222-22",
+        pwd=456,
+        address = Address(logradouro = "Rua 1")
+    ), 1006)
 
     currentAccount.deposit(1000.0)
     savingsAccount.deposit(1000.0)
@@ -24,4 +36,5 @@ fun diferentAccountsTest() {
     println("Saldo pupança após transferencia  ${savingsAccount.saldo}\n")
 
 
+    println("${savingsAccount.owner.address.logradouro} \n")
 }

@@ -1,6 +1,6 @@
 package br.com.example.myproject.model
 
-abstract class Account(val name: String, val number: Int) {
+abstract class Account(val owner: Client, val number: Int) {
     var saldo: Double = 0.0
         protected set
 
@@ -18,7 +18,7 @@ abstract class Account(val name: String, val number: Int) {
             if (n <= this.saldo) {
                 this.saldo -= n
                 to.deposit(n)
-                return println("Transferencia de $name feita para ${to.name} no valor de R$$n ")
+                return println("Transferencia de $owner feita para ${to.owner} no valor de R$$n ")
             }
             return println("Saldo insuficiente para esse saque, tente um valor inferior a $saldo")
         }
