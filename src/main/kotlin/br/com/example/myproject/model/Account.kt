@@ -4,8 +4,17 @@ abstract class Account(val owner: Client, val number: Int) {
     var saldo: Double = 0.0
         protected set
 
+    companion object Counter {
+        var totalAccount = 0
+            private set
+    }
+
+    init {
+        totalAccount++
+    }
+
     fun deposit(n: Double) {
-        if(n > 0 ){
+        if (n > 0) {
             this.saldo += n
         }
     }
