@@ -1,18 +1,16 @@
 package br.com.example.myproject
 
 import br.com.example.myproject.model.Address
-import employeeTest
 
 fun main() {
     println("STARTING... \n")
-    val address = Address()
+    val address = Address(numero = 321, cep = "000-000", logradouro = "Rua dois")
+    val newAddress = Address(cidade = "Campinas", cep = "000-000", logradouro = "Rua dois")
 
-    imprime(2)
-    imprime("dsa")
-    imprime(true)
-    imprime(address)
+    println(address.toString())
+    println(newAddress.toString())
+    println(newAddress.equals(address))
 
-    employeeTest()
 
 }
 
