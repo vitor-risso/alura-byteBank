@@ -1,5 +1,7 @@
 package br.com.example.myproject.model
 
+import br.com.example.myproject.exceptions.InsufficientBalanceException
+
 abstract class Account(val owner: Client, val number: Int) {
     var saldo: Double = 0.0
         protected set
@@ -22,15 +24,21 @@ abstract class Account(val owner: Client, val number: Int) {
     abstract fun cash(n: Double)
 
     fun transfer(to: Account, n: Double) {
-
-        if (this.saldo > 0) {
-            if (n <= this.saldo) {
-                this.saldo -= n
-                to.deposit(n)
-                return println("Transferencia de $owner feita para ${to.owner} no valor de R$$n ")
+        try {
+            if (this.saldo > 0) {
+                if (n <= this.saldo) {
+                    this.saldo -= n
+                    to.deposit(n)
+                    return println("Transferencia de $owner feita para ${to.owner} no valor de R$$n ")
+                }else{
+                    throw InsufficientBalanceException()
+                }
+            }else{
+                throw InsufficientBalanceException()
             }
-            return println("Saldo insuficiente para esse saque, tente um valor inferior a $saldo")
+        } catch (e: InsufficientBalanceException) {
+            e.printStackTrace()
         }
-        return println("Sua conta está negativa ou zerada")
+
     }
 }

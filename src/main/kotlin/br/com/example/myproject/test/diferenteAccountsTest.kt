@@ -30,7 +30,7 @@ fun differentAccountsTest() {
     println("Saldo pupança apó saque ${savingsAccount.saldo} \n")
 
 
-    currentAccount.transfer(savingsAccount, 50.00)
+    currentAccount.transfer(savingsAccount, 500000.00)
 
     println("Saldo corrente após transferencia  ${currentAccount.saldo}")
     println("Saldo pupança após transferencia  ${savingsAccount.saldo}\n")
