@@ -2,12 +2,12 @@ package br.com.example.myproject.test
 
 
 fun typeFunctionPreferenceTest() {
-    val myFunction: () -> Unit = ::test
+    val myFunction: (Int, Int) -> Int = ::sum
 
-    println(myFunction())
+    println(myFunction(5, 10))
 }
 
 
-fun test() {
-    println("OI")
+fun sum(a: Int, b: Int): Int {
+    return a + b
 }
