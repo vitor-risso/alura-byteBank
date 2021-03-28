@@ -25,6 +25,7 @@ fun main() {
 }
 
 fun sum(a:Int, b:Int, result: (Int) -> Unit){
+
     result(a+b)
 }
 
