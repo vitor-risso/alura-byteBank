@@ -10,7 +10,13 @@ fun authTest() {
 
     val internSystem = InternSystem()
 
-    internSystem.on(manager, 123)
-    internSystem.on(director, 444)
-    internSystem.on(client, 555)
+    internSystem.on(manager, 123){
+        print("realizadno Pagamento")
+    }
+    internSystem.on(director, 444){
+        print("realizadno Pagamento")
+    }
+    internSystem.on(client, 555){
+        print("realizadno Pagamento")
+    }
 }

@@ -1,31 +1,32 @@
 package br.com.example.myproject
 
+import authTest
+import br.com.example.myproject.model.Address
+
 fun main() {
     println("STARTING... \n")
 
-//    typeFunctionPreferenceTest()
-//    typeClassPreferenceTest()
+    Address(logradouro = "rau dois", numero = 321)
+        .let {
+            "${it.logradouro}, ${it.numero}".toUpperCase()
+        }.let(::println)
 
 
-    val myLambdaFunction: (Int, Int) -> Int = { a, b ->
-        a + b
-    }
-    println(myLambdaFunction(5, 8))
+    listOf(Address(complemento = "casa"), Address(), Address(complemento = "apartamento"))
+        .filter{
 
-    val myAnotherLambdaFunction = { a: Int, b: Int ->
-        a + b
-    }
-    println(myAnotherLambdaFunction(7, 8))
+            it.complemento.isNotEmpty()
+        }.let (::println)
 
-    //Lambda function returns the last line
-
-    val calculatorBonus: (salary: Double) -> Double = lambda@{ salary ->
-        if (salary > 1000.0) {
-            return@lambda salary + 200.0
-        }
-        return@lambda salary+200.0
+    sum(1, 5){
+        print(it)
     }
 
-    println(calculatorBonus(100.0))
 }
+
+fun sum(a:Int, b:Int, result: (Int) -> Unit){
+    result(a+b)
+}
+
+
 

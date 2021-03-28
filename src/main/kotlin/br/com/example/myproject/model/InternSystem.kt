@@ -1,9 +1,9 @@
 package br.com.example.myproject.model
 
 class InternSystem {
-    fun on(admin: Authenticable, pwd: Int){
+    fun on(admin: Authenticable, pwd: Int, auth: ()-> Unit ={}){
         if(admin.auth(pwd)){
-            println("Bem vindo")
+            auth()
         }else{
             println("Falhana autentcação")
         }
