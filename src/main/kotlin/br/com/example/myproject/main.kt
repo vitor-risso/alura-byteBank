@@ -3,22 +3,22 @@ package br.com.example.myproject
 fun main() {
     println("STARTING... \n")
 
-    val sawAndroidCourse: MutableSet<String> = mutableSetOf("vitor", "ana")
-    val sawKotlinCourse: MutableSet<String> = mutableSetOf("vitor", "paulo")
-//    val sawBoth = sawAndroidCourse + sawKotlinCourse
-//    set retorna uma lista distinta diferentemente sesomarmos duas listas normais
-//    sawBoth.addAll(sawAndroidCourse)
-//    sawBoth.addAll(sawKotlinCourse)
-//    println(sawBoth.distinct()) -> using list
-    val sawBoth: MutableSet<String> = mutableSetOf()
-    sawBoth.addAll(sawAndroidCourse)
-    sawBoth.addAll(sawKotlinCourse)
-    println(sawBoth)
-    println(sawAndroidCourse intersect  sawKotlinCourse)
-//    println(sawAndroidCourse union sawKotlinCourse)
-//    println(sawAndroidCourse subtract  sawKotlinCourse)
-//    mesma coisa que usar + e -
+    val pedidos = mutableMapOf(Pair(1, 20.0), 2 to 34.0)
+    val pedido = pedidos[1] // precisa colocar a chave nao a posicao do item
+    pedido?.let {
+        println(pedido)
+    }
 
+    for(entry in pedidos){
+        println(entry.key)
+        println(entry.value)
+    }
 
+    pedidos[3] = 90.0
+    pedidos.put(4, 902.0)
+    println(pedidos)
+    pedidos.put(4, 100.0)
+    println(pedidos) // so add se n tiver valor na chave ainda
+    pedidos.putIfAbsent(5, 32.32)
+    pedidos.remove(4, 100.0)// so vai remover o 4 se o valor dele for 100, o segundo parametro é opcional
 }
-
