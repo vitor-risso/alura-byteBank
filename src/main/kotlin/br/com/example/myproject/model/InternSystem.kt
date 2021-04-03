@@ -9,4 +9,17 @@ class InternSystem {
         }
 
     }
+
+    fun onReceiver(admin: Authenticable, pwd: Int, auth: InternSystem.()-> Unit ={}){
+        if(admin.auth(pwd)){
+            auth(this)
+        }else{
+            println("Falhana autentcação")
+        }
+
+    }
+
+    fun payment(){
+        println("pagamento")
+    }
 }
